@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berita & Kegiatan — Desa Sukamaju</title>
+  <meta name="description" content="Berita, pengumuman, dan kegiatan terbaru dari Desa Sukamaju.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="preloader"><div class="preloader-spinner"></div></div>
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo"><div class="logo-icon">S</div><div class="logo-text"><span class="name">Desa Sukamaju</span><span class="subtitle">Kab. Sukabumi</span></div></a>
+      <nav><ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Beranda</a></li><li><a href="profil.html" class="nav-link">Profil</a></li>
+        <li><a href="pemerintahan.html" class="nav-link">Pemerintahan</a></li><li><a href="layanan.html" class="nav-link">Layanan</a></li>
+        <li><a href="berita.html" class="nav-link active">Berita</a></li><li><a href="galeri.html" class="nav-link">Galeri</a></li><li><a href="kontak.html" class="nav-link">Kontak</a></li>
+      </ul></nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Berita & Kegiatan</h1>
+      <div class="breadcrumb"><a href="index.html">Beranda</a> <span>/</span> <span>Berita</span></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="berita-filter animate-on-scroll">
+        <button class="filter-btn active" data-filter="semua">Semua</button>
+        <button class="filter-btn" data-filter="kegiatan">Kegiatan</button>
+        <button class="filter-btn" data-filter="pemerintahan">Pemerintahan</button>
+        <button class="filter-btn" data-filter="pertanian">Pertanian</button>
+        <button class="filter-btn" data-filter="kesehatan">Kesehatan</button>
+        <button class="filter-btn" data-filter="pengumuman">Pengumuman</button>
+      </div>
+
+      <div class="berita-list">
+        <div class="news-card animate-on-scroll" data-category="kegiatan">
+          <div class="news-card-image">
+            <img src="assets/images/berita-gotong-royong.png" alt="Gotong Royong" loading="lazy">
+            <span class="news-category">Kegiatan</span>
+          </div>
+          <div class="news-card-body">
+            <div class="date">📅 28 Maret 2026</div>
+            <h3>Gotong Royong Bersih Desa Bersama Warga RT 05</h3>
+            <p>Warga RT 05 Desa Sukamaju mengadakan kegiatan gotong royong membersihkan lingkungan desa dan penanaman pohon di sepanjang jalan utama desa. Kegiatan ini diikuti oleh lebih dari 100 warga dari berbagai kalangan.</p>
+            <a href="#" class="read-more">Baca selengkapnya →</a>
+          </div>
+        </div>
+
+        <div class="news-card animate-on-scroll delay-1" data-category="pemerintahan">
+          <div class="news-card-image">
+            <img src="assets/images/berita-musyawarah.png" alt="Musyawarah" loading="lazy">
+            <span class="news-category">Pemerintahan</span>
+          </div>
+          <div class="news-card-body">
+            <div class="date">📅 25 Maret 2026</div>
+            <h3>Musyawarah Desa: Rencana Pembangunan Tahun 2026</h3>
+            <p>Pemerintah Desa Sukamaju menggelar musyawarah desa untuk membahas rencana pembangunan infrastruktur dan program pemberdayaan masyarakat tahun anggaran 2026.</p>
+            <a href="#" class="read-more">Baca selengkapnya →</a>
+          </div>
+        </div>
+
+        <div class="news-card animate-on-scroll delay-2" data-category="pertanian">
+          <div class="news-card-image">
+            <img src="assets/images/berita-panen.png" alt="Panen Raya" loading="lazy">
+            <span class="news-category">Pertanian</span>
+          </div>
+          <div class="news-card-body">
+            <div class="date">📅 20 Maret 2026</div>
+            <h3>Panen Raya: Hasil Pertanian Desa Meningkat 15%</h3>
+            <p>Program intensifikasi pertanian berhasil meningkatkan hasil panen padi sebesar 15% dibanding musim tanam sebelumnya. Petani menyambut gembira hasil ini.</p>
+            <a href="#" class="read-more">Baca selengkapnya →</a>
+          </div>
+        </div>
+
+        <div class="news-card animate-on-scroll" data-category="kesehatan">
+          <div class="news-card-image">
+            <img src="assets/images/galeri-posyandu.png" alt="Posyandu" loading="lazy">
+            <span class="news-category">Kesehatan</span>
+          </div>
+          <div class="news-card-body">
+            <div class="date">📅 15 Maret 2026</div>
+            <h3>Posyandu Rutin: Pemeriksaan Kesehatan Ibu dan Anak</h3>
+            <p>Posyandu Desa Sukamaju mengadakan pemeriksaan kesehatan rutin bagi ibu hamil dan balita. Kegiatan ini dihadiri oleh bidan desa dan petugas kesehatan dari Puskesmas.</p>
+            <a href="#" class="read-more">Baca selengkapnya →</a>
+          </div>
+        </div>
+
+        <div class="news-card animate-on-scroll delay-1" data-category="kegiatan">
+          <div class="news-card-image">
+            <img src="assets/images/galeri-upacara.png" alt="Upacara" loading="lazy">
+            <span class="news-category">Kegiatan</span>
+          </div>
+          <div class="news-card-body">
+            <div class="date">📅 10 Maret 2026</div>
+            <h3>Peringatan Hari Besar Nasional di Balai Desa</h3>
+            <p>Pemerintah dan masyarakat Desa Sukamaju menggelar upacara peringatan hari besar nasional yang dihadiri oleh seluruh elemen masyarakat desa.</p>
+            <a href="#" class="read-more">Baca selengkapnya →</a>
+          </div>
+        </div>
+
+        <div class="news-card animate-on-scroll delay-2" data-category="pengumuman">
+          <div class="news-card-image">
+            <img src="assets/images/galeri-infrastruktur.png" alt="Infrastruktur" loading="lazy">
+            <span class="news-category">Pengumuman</span>
+          </div>
+          <div class="news-card-body">
+            <div class="date">📅 5 Maret 2026</div>
+            <h3>Pengumuman: Pembangunan Jalan Desa Tahap II Dimulai</h3>
+            <p>Pemerintah Desa Sukamaju mengumumkan dimulainya pembangunan jalan desa tahap II yang menghubungkan Dusun Sukasari dan Dusun Sukamanah.</p>
+            <a href="#" class="read-more">Baca selengkapnya →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top"><div class="container"><div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon">S</div><div class="logo-text"><span class="name">Desa Sukamaju</span><span class="subtitle">Kab. Sukabumi</span></div></a><p>Pemerintah Desa Sukamaju berkomitmen memberikan pelayanan terbaik.</p><div class="footer-social"><a href="#">📘</a><a href="#">📷</a><a href="#">🎬</a><a href="#">💬</a></div></div>
+      <div class="footer-col"><h4>Navigasi</h4><ul><li><a href="index.html">→ Beranda</a></li><li><a href="profil.html">→ Profil</a></li><li><a href="pemerintahan.html">→ Pemerintahan</a></li><li><a href="layanan.html">→ Layanan</a></li><li><a href="berita.html">→ Berita</a></li></ul></div>
+      <div class="footer-col"><h4>Layanan</h4><ul><li><a href="layanan.html">→ Surat Keterangan</a></li><li><a href="layanan.html">→ Surat Domisili</a></li><li><a href="layanan.html">→ Kartu Keluarga</a></li></ul></div>
+      <div class="footer-col"><h4>Kontak</h4><ul class="footer-contact"><li><span class="icon">📍</span><span>Jl. Raya Sukamaju No. 01, Kab. Sukabumi</span></li><li><span class="icon">📞</span><span>(0266) 123-4567</span></li><li><span class="icon">✉️</span><span>desa.sukamaju@gmail.com</span></li></ul></div>
+    </div></div></div>
+    <div class="footer-bottom"><div class="container"><p>© 2026 Pemerintah Desa Sukamaju. Seluruh hak cipta dilindungi.</p></div></div>
+  </footer>
+  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

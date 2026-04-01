@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel — Desa Sukamaju</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <!-- Login Screen -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="login-logo">
+        <div class="logo-icon">S</div>
+        <h1>Desa Sukamaju</h1>
+        <p>Panel Administrasi</p>
+      </div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginUsername">Username</label>
+          <input type="text" id="loginUsername" placeholder="Masukkan username" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Masukkan password" required autocomplete="current-password">
+        </div>
+        <div class="login-error" id="loginError"></div>
+        <button type="submit" class="btn-login">🔐 Masuk</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard -->
+  <div class="admin-wrapper" id="adminWrapper" style="display:none">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-icon-sm">S</div>
+        <div>
+          <h3>Desa Sukamaju</h3>
+          <span class="admin-badge">Admin Panel</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-section="dashboard"><span class="nav-icon">📊</span> Dashboard</a>
+        <a href="#" class="nav-item" data-section="berita"><span class="nav-icon">📰</span> Berita</a>
+        <a href="#" class="nav-item" data-section="galeri"><span class="nav-icon">🖼️</span> Galeri</a>
+        <a href="#" class="nav-item" data-section="perangkat"><span class="nav-icon">👥</span> Perangkat</a>
+        <a href="#" class="nav-item" data-section="layanan"><span class="nav-icon">📋</span> Layanan</a>
+        <a href="#" class="nav-item" data-section="pesan"><span class="nav-icon">💬</span> Pesan <span class="badge" id="pesanBadge" style="display:none">0</span></a>
+        <a href="#" class="nav-item" data-section="statistik"><span class="nav-icon">📈</span> Statistik</a>
+        <a href="#" class="nav-item" data-section="profil"><span class="nav-icon">🏠</span> Profil Desa</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="index.html" class="nav-item" target="_blank"><span class="nav-icon">🌐</span> Lihat Website</a>
+        <a href="#" class="nav-item logout-btn" id="logoutBtn"><span class="nav-icon">🚪</span> Keluar</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+        <h2 class="page-title" id="pageTitle">Dashboard</h2>
+        <div class="topbar-right">
+          <span class="admin-name" id="adminName">Admin</span>
+        </div>
+      </header>
+
+      <div class="content-area" id="contentArea">
+        <!-- Dashboard Section -->
+        <section class="section active" id="sec-dashboard">
+          <div class="stats-row" id="dashboardStats"></div>
+          <div class="card">
+            <h3>🎉 Selamat Datang di Panel Admin</h3>
+            <p>Kelola konten website Desa Sukamaju dari sini. Pilih menu di sidebar untuk mulai mengelola data.</p>
+          </div>
+        </section>
+
+        <!-- Berita Section -->
+        <section class="section" id="sec-berita">
+          <div class="section-toolbar">
+            <h3>📰 Daftar Berita</h3>
+            <button class="btn-primary" id="btnTambahBerita">+ Tambah Berita</button>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table" id="tabelBerita">
+              <thead>
+                <tr><th>No</th><th>Judul</th><th>Kategori</th><th>Tanggal</th><th>Status</th><th>👁️</th><th>Aksi</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Galeri Section -->
+        <section class="section" id="sec-galeri">
+          <div class="section-toolbar">
+            <h3>🖼️ Galeri Foto</h3>
+            <button class="btn-primary" id="btnTambahGaleri">+ Tambah Foto</button>
+          </div>
+          <div class="galeri-grid" id="galeriGrid"></div>
+        </section>
+
+        <!-- Perangkat Section -->
+        <section class="section" id="sec-perangkat">
+          <div class="section-toolbar">
+            <h3>👥 Perangkat Desa</h3>
+            <button class="btn-primary" id="btnTambahPerangkat">+ Tambah Perangkat</button>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table" id="tabelPerangkat">
+              <thead>
+                <tr><th>No</th><th>Nama</th><th>Jabatan</th><th>NIP/Periode</th><th>Aksi</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Layanan Section -->
+        <section class="section" id="sec-layanan">
+          <div class="section-toolbar">
+            <h3>📋 Layanan Publik</h3>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table" id="tabelLayanan">
+              <thead>
+                <tr><th>No</th><th>Icon</th><th>Nama Layanan</th><th>Deskripsi</th><th>Persyaratan</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Pesan Section -->
+        <section class="section" id="sec-pesan">
+          <div class="section-toolbar">
+            <h3>💬 Pesan Masuk</h3>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table" id="tabelPesan">
+              <thead>
+                <tr><th>No</th><th>Nama</th><th>Email</th><th>Subjek</th><th>Tanggal</th><th>Status</th><th>Aksi</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Statistik Section -->
+        <section class="section" id="sec-statistik">
+          <div class="section-toolbar">
+            <h3>📈 Statistik Desa</h3>
+          </div>
+          <div class="statistik-grid" id="statistikGrid"></div>
+        </section>
+
+        <!-- Profil Section -->
+        <section class="section" id="sec-profil">
+          <div class="section-toolbar">
+            <h3>🏠 Profil Desa</h3>
+          </div>
+          <form id="formProfil" class="card">
+            <div class="form-row">
+              <div class="form-group"><label>Nama Desa</label><input type="text" id="profilNama" class="form-control"></div>
+              <div class="form-group"><label>Telepon</label><input type="text" id="profilTelepon" class="form-control"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Email</label><input type="email" id="profilEmail" class="form-control"></div>
+              <div class="form-group"><label>Jam Operasional</label><input type="text" id="profilJam" class="form-control"></div>
+            </div>
+            <div class="form-group"><label>Alamat</label><textarea id="profilAlamat" class="form-control" rows="2"></textarea></div>
+            <div class="form-group"><label>Sejarah Desa</label><textarea id="profilSejarah" class="form-control" rows="5"></textarea></div>
+            <div class="form-group"><label>Visi</label><textarea id="profilVisi" class="form-control" rows="2"></textarea></div>
+            <div class="form-group"><label>Misi</label><textarea id="profilMisi" class="form-control" rows="4"></textarea></div>
+            <div class="form-group"><label>Potensi Desa</label><textarea id="profilPotensi" class="form-control" rows="3"></textarea></div>
+            <button type="submit" class="btn-primary">💾 Simpan Perubahan</button>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Modal</h3>
+        <button class="modal-close" id="modalClose">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
